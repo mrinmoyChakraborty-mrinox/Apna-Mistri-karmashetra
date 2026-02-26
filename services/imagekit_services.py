@@ -7,7 +7,7 @@ from PIL import Image
 imagekit = ImageKit(
     private_key=os.environ.get("IMAGEKIT_PRIVATE_KEY"),
     #public_key=os.environ.get("IMAGEKIT_PUBLIC_KEY"),
-    url_endpoint=os.environ.get("IMAGEKIT_URL_ENDPOINT")
+    #url_endpoint=os.environ.get("IMAGEKIT_URL_ENDPOINT")
 )
 
 # -------------------------
