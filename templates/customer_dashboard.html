@@ -29,7 +29,6 @@
         <p>Welcome back, <strong>{{ session['user']['name'] }}</strong></p>
     </div>
 
-    <button class="find-workers-btn">🔍 Find Workers</button>
     <button class="inbox-btn" onclick="openInbox()">📥 Inbox</button>
 </section>
 
@@ -169,18 +168,11 @@
         <div id="recentChats"></div>
     </div>
 
-    <!-- Live Map 
+    <!-- Live Map-->
     <div class="card map-card">
-        <h3>Live Map & Nearby Workers</h3>
-        <p>Your Location: Area Name</p>
 
-        <div class="map-box">Map will appear here</div>
-
-        <input 
-            type="text" 
-            class="search-bar" 
-            placeholder="Search nearby workers...">
-    </div>-->
+        <div class="map-box"><img src="{{ url_for('static', filename='images/map_placeholder.png') }}" ></div>
+    </div>
 
 </main>
 <div id="modalOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:1000;">
