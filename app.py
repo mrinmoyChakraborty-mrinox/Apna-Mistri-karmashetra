@@ -132,6 +132,7 @@ def user_setup():
         "photo_url": photo_url}
     # Update users collection (customer profile lives here)
     firebase_services.update_user_profile(uid,data)
+    session["user"]["name"]=name
     session["user"]["role"]="customer"
     session.modified = True
     return {"success": True}
@@ -171,8 +172,9 @@ def update_profile():
 
     if photo_url:
         session["user"]["photo_url"] = photo_url
-        session.modified = True
-
+        
+    session["user"]["name"]=name
+    session.modified = True
     return {"success": True}
 
 @app.route("/profile")
