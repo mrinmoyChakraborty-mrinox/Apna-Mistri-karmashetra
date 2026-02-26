@@ -2,7 +2,7 @@ Flask
 firebase-admin
 python-dotenv
 requests
-imagekitio==4.2.0
+imagekitio
 fpdf
 pillow
 tqdm
