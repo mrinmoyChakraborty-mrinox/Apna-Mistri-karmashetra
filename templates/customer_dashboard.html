@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+{% block content %}
+    <title>Customer Dashboard | ApnaMistri</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/customer_dashboard.css') }}">
+
+<body>
+
+<!-- TOP BAR
+<header class="topbar">
+    <div class="top-left">
+        <img src="{{ url_for('static', filename='images/logo.jpeg') }}"
+             class="logo-img"
+             alt="ApnaMistri Logo">
+        <span class="brand">ApnaMistri</span>
+    </div>
+
+    <div class="top-right">
+        <button class="icon-btn" title="Profile">👤</button>
+        <button class="icon-btn" title="Notifications">🔔</button>
+        <button class="logout-btn">Log Out</button>
+    </div>
+</header>
+ -->
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <div>
+        <h1>Customer Dashboard</h1>
+        <p>Welcome back, <strong>{{ session['user']['name'] }}</strong></p>
+    </div>
+
+    <button class="find-workers-btn">🔍 Find Workers</button>
+    <button class="inbox-btn" onclick="openInbox()">📥 Inbox</button>
+</section>
+
+<!-- DASHBOARD GRID -->
+<main class="dashboard">
+
+    <!-- Ongoing Work
+    <div class="card ongoing">
+        <h3>Ongoing Work</h3>
+
+        <div class="worker-row">
+            <img 
+                src="{{ url_for('static', filename='images/avatar_cartoon.jpeg') }}"
+                class="avatar"
+                alt="Worker Avatar">
+
+            <div class="info">
+                <p><strong>Worker Name</strong></p>
+                <p>Skill Type</p>
+                <p>Ongoing Job</p>
+                <p>Status: <span class="status">In Progress</span></p>
+                <p>Started on: Date</p>
+            </div>
+
+            <div class="right-actions">
+                <button class="primary-btn">View Work</button>
+            </div>
+        </div>
+    </div>-->
+    <div class="card ongoing">
+    <h3>Ongoing Work</h3>
+    <div id="ongoingJobs"></div>
+    </div>
+
+    <!-- Previous Hires 
+    <div class="card previous-card">
+        <div class="card-header">
+            <h3>Previous Hires</h3>
+            <a href="#">See all</a>
+        </div>
+
+        <div class="worker-row">
+            <img 
+                src="{{ url_for('static', filename='images/avatar_illustrated.jpeg') }}"
+                class="avatar"
+                alt="Worker Avatar">
+
+            <div class="info">
+                <p>
+                    <strong>Worker Name</strong>
+                    <span class="rating">4.5 ⭐</span>
+                </p>
+                <p>Skill Type</p>
+                <p>Completed Job</p>
+                <p>Completed on: Date</p>
+
+                <div class="inline-actions">
+                    <button class="primary-btn">Hire Again</button>
+                    <button class="outline-btn">See Details</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <div class="card previous-card">
+    <div class="card-header">
+        <h3>Previous Hires</h3>
+    </div>
+
+    <div id="previousHires"></div>
+    </div>
+
+
+    <!-- Saved Workers 
+    <div class="card saved-card">
+        <div class="card-header">
+            <h3>Saved Workers</h3>
+            <a href="#">See all</a>
+        </div>
+
+        <div class="worker-row">
+            <img 
+                src="{{ url_for('static', filename='images/avatar_illustrated.jpeg') }}"
+                class="avatar"
+                alt="Worker Avatar">
+
+            <div class="info">
+                <p><strong>Worker Name</strong></p>
+                <p>Skill Type</p>
+                <p>Distance: — km</p>
+            </div>
+
+            <div class="right-actions">
+                <button class="outline-btn">View Profile</button>
+                <button class="primary-btn">Chat</button>
+            </div>
+        </div>
+    </div>-->
+    <div class="card saved-card">
+    <div class="card-header">
+        <h3>Saved Workers</h3>
+    </div>
+
+    <div id="savedWorkers"></div>
+</div>
+
+
+    <!-- Recent Chats
+    <div class="card chat-card">
+        <div class="card-header">
+            <h3>Recent Chats</h3>
+            <a href="#">See all</a>
+        </div>
+
+        <div class="worker-row">
+            <img 
+                src="{{ url_for('static', filename='images/avatar_cartoon.jpeg') }}"
+                class="avatar"
+                alt="Worker Avatar">
+
+            <div class="info">
+                <p><strong>Worker Name</strong></p>
+                <p>Skill Type</p>
+                <p>Last discussed job</p>
+                <p>Last active: Time</p>
+            </div>
+
+            <div class="right-actions">
+                <button class="primary-btn">Message</button>
+            </div>
+        </div>
+    </div>-->
+    <div class="card chat-card">
+        <div class="card-header">
+            <h3>Recent Chats</h3>
+        </div>
+
+        <div id="recentChats"></div>
+    </div>
+
+    <!-- Live Map -->
+    <div class="card map-card">
+        <h3>Live Map & Nearby Workers</h3>
+        <p>Your Location: Area Name</p>
+
+        <div class="map-box">Map will appear here</div>
+
+        <input 
+            type="text" 
+            class="search-bar" 
+            placeholder="Search nearby workers...">
+    </div>
+
+</main>
+<div id="modalOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:1000;">
+  <div style="background:#111; width:80%; max-height:80%; margin:5% auto; padding:20px; border-radius:12px; overflow:auto;">
+    
+    <h2 id="modalTitle"></h2>
+
+    <div id="modalContent"></div>
+
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/customer_dashboard.js') }}"></script>
+</body>
+{% endblock %}

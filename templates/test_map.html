@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ApnaMistri Test Map</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+
+  // =========================
+  // Fake Workers (for testing)
+  // =========================
+
+  const workers = [
+    {
+      name: "Rahul - Plumber",
+      lat: 22.5726,
+      lng: 88.3639,
+      slug: "rahul-plumber"
+    },
+    {
+      name: "Suresh - Electrician",
+      lat: 22.5800,
+      lng: 88.3700,
+      slug: "suresh-electrician"
+    },
+    {
+      name: "Akash - Tile Worker",
+      lat: 22.5650,
+      lng: 88.3550,
+      slug: "akash-tiles"
+    }
+  ];
+
+  // =========================
+  // Get User Location
+  // =========================
+
+  navigator.geolocation.getCurrentPosition(initMap, showError);
+
+  function showError() {
+    alert("Location permission required!");
+  }
+
+  function initMap(position) {
+
+    const userLat = position.coords.latitude;
+    const userLng = position.coords.longitude;
+
+    // =========================
+    // Create Map
+    // =========================
+
+    const map = L.map('map').setView([userLat, userLng], 13);
+
+    // OpenStreetMap tiles (FREE)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19
+    }).addTo(map);
+
+    // =========================
+    // User Marker
+    // =========================
+
+    L.marker([userLat, userLng])
+      .addTo(map)
+      .bindPopup("You are here")
+      .openPopup();
+
+    // =========================
+    // Worker Markers
+    // =========================
+
+    workers.forEach(w => {
+
+      const marker = L.marker([w.lat, w.lng]).addTo(map);
+
+      marker.bindPopup(`
+        <b>${w.name}</b><br>
+        <button onclick="openProfile('${w.slug}')">View Profile</button>
+      `);
+
+    });
+
+  }
+
+  // =========================
+  // Profile Redirect
+  // =========================
+
+  function openProfile(slug) {
+    alert("Open profile: " + slug);
+    // later:
+    // window.location.href = "/profile/" + slug;
+  }
+
+</script>
+
+</body>
+</html>

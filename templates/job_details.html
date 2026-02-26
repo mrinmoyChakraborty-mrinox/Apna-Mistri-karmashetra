@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/job_details.css') }}">
+</head>
+
+<body>
+
+<section class="job-details-wrapper">
+
+    <!-- Top Bar
+    <div class="top-bar">
+        <div class="logo">ApnaMistri</div>
+
+        <div class="top-actions">
+            <button type="button" onclick="window.location.href='/worker-dashboard'">
+                Dashboard
+            </button>
+            <button type="button">Log Out</button>
+        </div>
+    </div> -->
+
+
+    <div class="job-layout">
+
+        <!-- ================= LEFT SECTION ================= -->
+        <div class="job-main">
+
+            <h2>Job Details</h2>
+
+            <!-- Customer Info -->
+            <div class="customer-card glass-card">
+                <img src="{{ url_for('static', filename='images/worker-photo.jpeg') }}" 
+                     alt="Customer" class="customer-avatar">
+
+                <div>
+                    <h3>Rahul Sharma</h3>
+                    <p>Customer in Salt Lake</p>
+                </div>
+            </div>
+
+            <div class="job-info glass-card">
+                <h3>New Job: Bathroom Pipe Repair</h3>
+                <p>Mon, Apr 15 at 11:00 AM</p>
+                <p><strong>Description:</strong> Fix pipe leak in the bathroom.</p>
+            </div>
+
+
+            <!-- BEFORE IMAGES -->
+            <div class="glass-card upload-section">
+
+                <h3>Before Images</h3>
+
+                <div class="upload-area" id="uploadArea">
+
+                    <input type="file"
+                           name="before_images"
+                           id="beforeImages"
+                           multiple
+                           accept="image/*">
+
+                    <div class="upload-content">
+                        📷 Upload photos showing the current issue
+                        <br>
+                        <span>Max 5 photos</span>
+                    </div>
+
+                </div>
+
+                <div id="imagePreview" class="preview-grid"></div>
+
+            </div>
+
+
+            <!-- ACTION BUTTONS -->
+            <div class="action-buttons">
+
+                <form method="POST" action="#" class="inline-form">
+                    <input type="hidden" name="job_id" value="1">
+                    <button type="submit" name="accept_job" class="accept-btn">
+                        Accept Job
+                    </button>
+                </form>
+
+                <form method="POST" action="#" class="inline-form">
+                    <input type="hidden" name="job_id" value="1">
+                    <button type="submit" name="decline_job" class="decline-btn">
+                        Decline
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= RIGHT SECTION ================= -->
+        <div class="job-sidebar glass-card">
+
+            <h3>Job Info</h3>
+
+            <p><strong>Customer:</strong> Rahul Sharma</p>
+            <p><strong>Date:</strong> Mon, Apr 15</p>
+            <p><strong>Time:</strong> 11:00 AM</p>
+
+            <hr>
+
+            <h4>Location on Map</h4>
+            <div class="map-placeholder">
+                Map Preview
+            </div>
+
+            <button type="button" class="direction-btn">
+                Get Directions
+            </button>
+
+            <hr>
+
+            <h4>Notes</h4>
+
+            <form method="POST" action="#">
+                <textarea name="worker_notes"
+                          placeholder="Add your notes here..."></textarea>
+
+                <button type="submit" name="save_notes" class="save-note-btn">
+                    Save Notes
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/job_details.js') }}"></script>
+
+</body>
+</html>

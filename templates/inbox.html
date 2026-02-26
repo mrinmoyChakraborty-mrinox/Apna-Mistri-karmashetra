@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+    <title>ApnaMistri | Inbox</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/inbox.css') }}">
+
+<body>
+
+
+<!-- ================= BACKGROUND SECTION ================= -->
+<section class="background-section">
+
+    <!-- Floating Glass Card -->
+    <div class="glass-card">
+        <!-- Page Heading -->
+        <div class="page-header">
+            <h2>Inbox</h2>
+        </div>
+
+        <div class="main-layout">
+
+            <!-- ================= SIDEBAR ================= -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <select>
+                        <option>All Conversations</option>
+                    </select>
+                </div>
+
+                
+            </aside>
+
+            <!-- ================= CHAT PANEL ================= -->
+            <div class="chat-panel">
+
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="chat-user">
+                        
+                    </div>
+                    <!-- GREEN BOOK BUTTON -->
+                    
+                </div>
+
+                <!-- Messages -->
+                <div class="chat-body">
+                    
+                </div>
+
+                <!-- Input -->
+                <div class="chat-input">
+                    <input id="messageInput" type="text" placeholder="Type your message...">
+                    <!-- BLUE SEND BUTTON -->
+                    <button id ="sendBtn" class="send-btn">Send</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+    window.currentUserId = "{{ session['user']['uid'] }}";
+    window.currentUserRole = "{{ session['user']['role'] }}";
+</script>
+<script src="{{ url_for('static', filename='js/inbox.js') }}"></script>
+
+</body>
+{% endblock %}
