@@ -1,0 +1,330 @@
+/* =====================================================
+   CREATE JOB PAGE – GLASS PREMIUM VERSION (FINAL)
+   ===================================================== */
+
+/* ================= BODY BACKGROUND ================= */
+
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background: url("../images/createjob.png") no-repeat center center fixed;
+    background-size: cover;
+    color: #151313;
+}
+
+.page-header h2,
+.step-text,
+label,
+.upload-section h3,
+.upload-subtext,
+.char-counter,
+.photo-count,
+.worker-mini-info h4,
+.worker-skill {
+    color: #050506a2;
+}
+
+/* Dark Blur Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+}
+
+/* ================= MAIN GLASS CONTAINER ================= */
+
+.glass-container {
+    max-width: 1000px;
+    margin: 70px auto;
+    padding: 40px 50px;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(25px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+    position: relative;
+}
+
+/* ================= BACK LINK ================= */
+
+.back-link {
+    margin-bottom: 10px;
+}
+
+.back-link button {
+    background: none;
+    border: none;
+    color: #e2e8f0;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* ================= HEADER ================= */
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-header h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.step-text {
+    margin-top: 5px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ================= FLOATING WORKER CARD ================= */
+
+.worker-mini-card {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: rgba(255,255,255,0.18);
+    padding: 15px 18px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.worker-mini-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.worker-mini-info h4 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.worker-skill {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.verified-row {
+    margin-top: 5px;
+    font-size: 12px;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+/* ================= FORM GRID ================= */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* ================= FORM GROUP ================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ================= INPUTS ================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: none;
+    font-size: 14px;
+    background: rgba(255,255,255,0.9);
+    color: #1e293b;
+    transition: 0.25s ease;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.4);
+}
+
+/* ================= CHARACTER COUNTER ================= */
+
+.char-counter {
+    text-align: right;
+    font-size: 12px;
+    margin-top: 6px;
+    opacity: 0.8;
+}
+
+/* ================= HIDDEN FIELD ================= */
+
+.hidden-field {
+    display: none;
+    margin-top: 10px;
+}
+
+/* ================= EDIT LOCATION ================= */
+
+.edit-location-btn {
+    margin-top: 8px;
+    background: none;
+    border: none;
+    color: #93c5fd;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* ================= UPLOAD SECTION ================= */
+
+.upload-section {
+    margin-top: 40px;
+}
+
+.upload-area {
+    border: 2px dashed rgba(0,0,0,0.3);
+    border-radius: 20px;
+    padding: 45px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background: rgba(255,255,255,0.4);
+    position: relative;
+}
+
+.upload-area:hover {
+    background: rgba(255,255,255,0.6);
+}
+
+.upload-area input[type="file"] {
+    display: none;
+}
+
+/* Bigger Icons */
+
+.upload-icons {
+    font-size: 75px;
+    margin-bottom: 15px;
+}
+
+.upload-icons span {
+    margin: 0 12px;
+}
+
+/* ================= PHOTO PREVIEW ================= */
+
+.photo-preview-grid {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 images per row */
+    gap: 15px;
+}
+
+.photo-preview-grid img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;  /* keeps image ratio but fills box */
+    border-radius: 12px;
+}
+
+/* ================= BUDGET SECTION ================= */
+
+.budget-section {
+    margin-top: 40px;
+}
+
+/* ================= AGREEMENT ROW FIXED ================= */
+
+.agreement-row {
+    display: flex;
+    align-items: center;   /* Perfect vertical alignment */
+    gap: 10px;
+    font-size: 14px;
+    margin-top: 12px;
+    color: #ffffff;
+}
+
+.agreement-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: #3b82f6;
+    flex-shrink: 0;
+}
+
+.agreement-row label {
+    margin: 0;
+    line-height: 1.4;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* ================= SUBMIT BUTTON ================= */
+
+.submit-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#submitBtn {
+    width: 60%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(90deg, #3b82f6, #facc15);
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+#submitBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+#submitBtn:disabled {
+    background: rgba(255,255,255,0.3);
+    cursor: not-allowed;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .worker-mini-card {
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    #submitBtn {
+        width: 100%;
+    }
+}

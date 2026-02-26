@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url("../images/onboarding.png") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TOPBAR */
+.topbar {
+    height: 70px;
+    background: rgba(15, 44, 77, 0.95);
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+}
+
+.logo img {
+    width: 35px;
+}
+
+/* CENTER */
+.onboarding-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARD */
+.onboarding-card {
+    width: 500px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    padding: 45px;
+    border-radius: 22px;
+    color: #222;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+.onboarding-card h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.step-indicator {
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #777;
+}
+
+/* FORM */
+.form-step {
+    display: none;
+    flex-direction: column;
+}
+
+.form-step.active {
+    display: flex;
+}
+
+label {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+input, select, textarea {
+    margin-top: 6px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #f4c430;
+    box-shadow: 0 0 0 3px rgba(244,196,48,0.2);
+}
+
+/* Image Preview */
+.preview {
+    width: 90px;
+    height: 90px;
+    margin-top: 12px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: none;
+}
+
+.file-name {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #555;
+}
+
+/* BUTTONS */
+button {
+    margin-top: 22px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.next-btn, .complete-btn {
+    background: linear-gradient(45deg, #f4c430, #ffb300);
+}
+
+.next-btn:hover, .complete-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.prev-btn {
+    background: #e0e0e0;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.skip-link {
+    text-align: center;
+    margin-top: 14px;
+}
+
+.skip-link a {
+    color: #666;
+    font-size: 13px;
+    text-decoration: none;
+}

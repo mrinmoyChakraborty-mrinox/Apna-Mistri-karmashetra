@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" href="/static/images/logo.png" type="image/x-icon" />
+<link rel="stylesheet" href="/static/css/style.css" />
+<body>
+<!-- Navbar -->
+  <nav class="navbar glass">
+    <a href="/" style=" text-decoration: none; color: inherit;"><div class="logo" >Apna<span>Mistri</span></div></a>
+    <div class="nav-btns">
+      <button class="btn ghost" aria-label="Home" onclick="window.location.href='/'">Home</button>
+      <button class="btn ghost" aria-label="Find Workers" onclick="window.location.href='/search'">Find Workers</button>
+      <button class="btn ghost" aria-label="About us" onclick="window.location.href='/about'">About Us</button>
+      <button class="btn ghost" aria-label="How it works" onclick="window.location.href='/how-it-works'">How it works</button>
+      {% if user %}
+      <button class="btn ghost" aria-label="logout" onclick="window.location.href='/logout'">Logout</button>
+      <button class="btn primary" aria-label="Dashboard" onclick="window.location.href='/dashboard'">Dashboard</button>
+      <a href="/profile" class="profile-link">
+        <div class="profile-avatar"
+            style="background-image: url('{{ user.photo_url }}');">
+        </div>
+      </a>
+      {% endif %}
+      {% if not user %}
+      <button class="btn primary" aria-label="Get Started" onclick="window.location.href='/getstarted'">Get Started</button>
+      {% endif %}
+    </div>
+  </nav>
+</body>
+{% block content %}
+{% endblock %}
+<script src="/static/js/script.js"></script>
+</html>

@@ -1,0 +1,206 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#eef2ff,#f8fafc);
+  color:#1f2937;
+}
+
+/* NAVBAR */
+.navbar{
+  background:#fff;
+  padding:18px 60px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.navbar h2{
+  color:#2563eb;
+}
+
+/* CONTAINER */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+h1{
+  margin-bottom:25px;
+  font-size:28px;
+}
+
+/* CARD */
+
+.worker-card{
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.07);
+  margin-bottom:25px;
+}
+
+.worker-name{
+  font-size:22px;
+  font-weight:600;
+}
+
+.worker-type{
+  color:#2563eb;
+  font-size:14px;
+  margin-top:4px;
+}
+
+
+.work-title{
+  font-size:18px;
+  margin-bottom:6px;
+}
+
+.work-desc{
+  color:#64748b;
+  font-size:14px;
+  line-height:1.6;
+}
+.card{
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  margin-bottom:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.07);
+}
+
+/* WORKER + WORK CARD */
+.worker-work-card{
+  display:flex;
+  gap:30px;
+  align-items:flex-start;
+}
+
+.left-profile{
+  width:220px;
+  text-align:center;
+  border-right:1px solid #e5e7eb;
+  padding-right:20px;
+}
+
+.profile-img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:10px;
+}
+
+.worker-type{
+  color:#2563eb;
+  font-size:14px;
+  margin-top:4px;
+}
+
+.right-work{
+  flex:1;
+}
+
+.work-title{
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.work-desc{
+  color:#64748b;
+  line-height:1.6;
+  font-size:15px;
+}
+
+/* UPLOAD GRID */
+.upload-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.upload-box{
+  border:2px dashed #cbd5f5;
+  padding:35px;
+  text-align:center;
+  border-radius:10px;
+  background:#f8fafc;
+  transition:0.3s;
+}
+
+.upload-box:hover{
+  border-color:#2563eb;
+  background:#eef2ff;
+}
+
+/* REVIEW */
+textarea{
+  width:100%;
+  height:120px;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  margin-top:10px;
+  resize:none;
+}
+
+.stars{
+  margin-top:10px;
+}
+
+.stars span{
+  font-size:28px;
+  color:#d1d5db;
+  cursor:pointer;
+}
+
+.submit{
+  margin-top:20px;
+  width:100%;
+  padding:14px;
+  background:linear-gradient(135deg,#2563eb,#3b82f6);
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.submit:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(37,99,235,0.3);
+}
+
+.stars span.active{
+  color:#fbbf24;
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+
+  .worker-work-card{
+    flex-direction:column;
+  }
+
+  .left-profile{
+    width:100%;
+    border-right:none;
+    border-bottom:1px solid #e5e7eb;
+    padding-bottom:15px;
+    padding-right:0;
+  }
+
+  .upload-grid{
+    grid-template-columns:1fr;
+  }
+
+  .navbar{
+    padding:15px 20px;
+  }
+
+}

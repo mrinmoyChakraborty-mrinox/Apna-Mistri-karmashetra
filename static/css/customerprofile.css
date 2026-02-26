@@ -1,0 +1,171 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f3f4f7;
+color:#333;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+background:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 40px;
+border-bottom:1px solid #e0e0e0;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.brand-logo{
+width:32px;
+height:32px;
+}
+
+.brand-name{
+font-size:20px;
+font-weight:600;
+color:#444;
+}
+
+.nav-actions{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.btn-light{
+padding:6px 14px;
+border:1px solid #ccc;
+background:#f7f7f7;
+border-radius:4px;
+text-decoration:none;
+color:#333;
+font-size:14px;
+}
+
+.logout-link{
+text-decoration:none;
+color:#555;
+font-size:14px;
+}
+
+/* ===== MAIN ===== */
+.main{
+max-width:650px;
+margin:40px auto;
+}
+
+.title{
+text-align:center;
+margin-bottom:20px;
+font-weight:600;
+color:#444;
+}
+
+/* ===== CARD ===== */
+.card{
+background:#fff;
+border-radius:6px;
+box-shadow:0 2px 6px rgba(0,0,0,0.08);
+padding:24px;
+}
+
+/* PROFILE HEADER */
+.profile-header{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+}
+
+.avatar{
+width:60px;
+height:60px;
+border-radius:6px;
+background:#e0e0e0;
+}
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.photo-btn {
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.join{
+font-size:14px;
+color:#777;
+margin-top:4px;
+}
+
+/* SECTION BAR */
+.section{
+background:#eef0f3;
+padding:10px;
+margin:20px -24px 15px;
+font-size:14px;
+font-weight:600;
+color:#555;
+}
+
+/* FORM */
+label{
+display:block;
+margin:12px 0 6px;
+font-size:14px;
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:4px;
+font-size:14px;
+}
+
+textarea{
+resize:none;
+}
+
+/* GRID */
+.grid{
+display:flex;
+gap:15px;
+margin-top:10px;
+}
+
+.grid div{
+flex:1;
+}
+
+/* SAVE BUTTON */
+.save-btn{
+margin-top:25px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:4px;
+background:linear-gradient(to right,#5f7fa8,#6f8fb8);
+color:#fff;
+font-size:16px;
+cursor:pointer;
+}
+
+.save-btn:hover{
+opacity:0.9;
+}

@@ -1,0 +1,191 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+
+    /* Softer cinematic overlay */
+    background:
+        linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.38)),
+        url("../images/role.png") no-repeat center center;
+    background-size: cover;
+    background-position: center;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+    height: 75px;
+    background: rgba(15, 44, 77, 0.95);
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 38px;
+}
+
+.logo span {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* =========================
+   CENTER CONTAINER
+========================= */
+.role-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* =========================
+   GLASS CARD (UPGRADED)
+========================= */
+.glass-card {
+    width: 760px;
+    padding: 65px 60px;
+
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.25);
+
+    text-align: center;
+
+    box-shadow: 
+        0 30px 80px rgba(0,0,0,0.45),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+.glass-card h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    color: #111111;   /* Black */
+}
+
+.subtitle {
+    font-size: 17px;
+    margin-bottom: 55px;
+    color: #333333;   /* Dark grey / black */
+}
+
+
+/* =========================
+   ROLE OPTIONS
+========================= */
+.role-options {
+    display: flex;
+    gap: 45px;
+    justify-content: center;
+}
+
+/* =========================
+   ROLE CARD (UPGRADED)
+========================= */
+.role-card {
+    width: 250px;
+    padding: 40px 25px;
+    border-radius: 22px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    border: 2px solid transparent;
+
+    background: rgba(255,255,255,0.06);
+}
+
+.role-card .icon {
+    font-size: 44px;
+    margin-bottom: 18px;
+}
+
+.role-card h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.role-label {
+    font-size: 14px;
+    opacity: 0.8;
+    letter-spacing: 0.3px;
+}
+
+/* =========================
+   CUSTOMER STYLE
+========================= */
+.customer {
+    border: 2px solid #3da9fc;
+}
+
+.customer:hover {
+    background: rgba(61,169,252,0.25);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(61,169,252,0.3);
+}
+
+/* =========================
+   WORKER STYLE
+========================= */
+.worker {
+    border: 2px solid #f4c430;
+}
+
+.worker:hover {
+    background: rgba(244,196,48,0.25);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(244,196,48,0.3);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+
+    .glass-card {
+        width: 95%;
+        padding: 45px 30px;
+    }
+
+    .role-options {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .role-card {
+        width: 100%;
+    }
+
+    .glass-card h1 {
+        font-size: 30px;
+    }
+}

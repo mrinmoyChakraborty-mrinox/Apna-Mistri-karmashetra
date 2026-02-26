@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block content %}
+  <title>Worker Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/worker_portfolio.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+
+<div class="portfolio-card">
+
+  <div class="top-profile">
+    <img src="{{ slug.photo or url_for('static', filename='images/handshake.jpeg') }}"
+     class="avatar"
+     id="avatarImage">
+
+<input type="file" id="avatarInput" class="hidden">
+    <div class="profile-details">
+       <h2 id="nameText">{{ slug.name }}</h2>
+  <input type="text"
+         id="nameInput"
+         class="edit-field hidden"
+         value="{{ slug.name }}">
+      <p class="rating">⭐ {{slug.rating}} ({{slug.review_count}} reviews)</p>
+      <p>{{ slug.trade }} • {{slug.experience}} Years Experience</p>
+      <p class="location">📍 {{slug.location}}</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>About</h3>
+    <!-- Display Mode -->
+  <p id="aboutText">{{ slug.about }}</p>
+
+  <!-- Edit Mode -->
+  <textarea id="aboutInput" class="edit-field hidden">{{ slug.about }}</textarea>
+  </div>
+
+  <div class="section">
+  <h3>Skills</h3>
+
+  <!-- Display Mode -->
+  <div class="tags" id="skillsDisplay">
+    {% for skill in slug.skills %}
+    <span class="tag">{{ skill }}</span>
+    {% endfor %}
+  </div>
+
+  <!-- Edit Mode -->
+  <div id="skillsEdit" class="hidden">
+
+    <div id="skillsContainer">
+      {% for skill in slug.skills %}
+      <div class="skill-item">
+        <input type="text" value="{{ skill }}">
+        <button type="button" onclick="removeSkill(this)">❌</button>
+      </div>
+      {% endfor %}
+    </div>
+
+    <button type="button" onclick="addSkill()">Add Skill</button>
+
+  </div>
+</div>
+
+  <div class="section availability">
+    <h3>Availability</h3>
+    <!-- Display Mode -->
+  <p id="availabilityText">
+    <strong>Available Days:</strong> {{slug.availability}} <br>
+    <strong>Working Hours:</strong> {{slug.working_hours}}
+  </p>
+
+  <!-- Edit Mode -->
+  <div id="availabilityEdit" class="hidden">
+    <input type="text"
+           id="availabilityInput"
+           class="edit-field"
+           value="{{slug.availability}}">
+
+    <input type="text"
+           id="workingHoursInput"
+           class="edit-field"
+           value="{{slug.working_hours}}">
+  </div>
+</div>
+
+  <!-- <div class="section">
+    <h3>Work Gallery</h3>
+    <div class="gallery">
+      <img src="images/work1.jpg">
+      <img src="images/work2.jpg">
+      <img src="images/work3.jpg">
+      <img src="images/work4.jpg">
+    </div>
+  </div> -->
+
+  <div class="section">
+  <h3>Work Gallery</h3>
+
+  <div class="gallery-grid">
+    {% if slug.work_gallery|length == 0 %}
+      <p>No work images available.</p>
+    {% endif %}
+
+    {% for img_url in slug.work_gallery %}
+    <div class="gallery-item">
+      <img src="{{ img_url }}" alt="Work Image">
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+  <!-- Review Section -->
+  <div class="section reviews">
+    <h3>Customer Reviews</h3>
+    {% if slug.reviews|length == 0 %}
+      <p>No reviews yet.</p>
+    {% endif %}
+    {% for review in slug.reviews %}
+    <div class="review-card">
+      <p class="reviewer-name"><strong>{{ review.reviewer_name }}</strong></p>
+      <p class="review-rating">⭐ {{ review.rating }}</p>
+      <p class="review-comment">{{ review.comment }}</p>
+  </div>
+  {% endfor %}
+{% if is_owner %}
+ <button class="edit-btn" onclick="enableEditMode()">Edit Profile</button>
+<button class="save-btn hidden" onclick="saveProfile()">Save Changes</button>
+
+{% else %}
+
+  {% if user and user.role == "customer" %}
+
+    <button class="chat-btn" onclick="chatWithWorker('{{ slug.uid }}')">
+      Chat with {{ slug.name }}
+    </button>
+
+    <button class="hire-btn" onclick="hireWorker('{{ slug.uid }}')">
+      Hire {{ slug.name }}
+    </button>
+
+  {% else %}
+
+    <a href="/getstarted?next=/worker/{{ slug.uid }}">
+      <button class="chat-btn">Chat with {{ slug.name }}</button>
+    </a>
+
+    <a href="/getstarted?next=/worker/{{ slug.uid }}">
+      <button class="hire-btn">Hire {{ slug.name }}</button>
+    </a>
+
+  {% endif %}
+
+{% endif %}
+</div>
+<script src="{{ url_for('static', filename='js/worker_portfolio.js') }}"></script>
+
+</body>
+{% endblock %}

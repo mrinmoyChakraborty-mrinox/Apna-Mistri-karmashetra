@@ -1,0 +1,237 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f4f6f9;
+}
+
+/* HEADER */
+.topbar{
+background:linear-gradient(to right,#3f6fb1,#2e5e9c);
+color:white;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:20px;
+font-weight:600;
+}
+
+.logo{width:34px;}
+
+.menu button{
+margin-left:15px;
+padding:8px 14px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+background:white;
+}
+
+/* SEARCH */
+.search-area{
+padding:20px 40px;
+background:#e9edf2;
+}
+
+.search-area input{
+width:420px;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.location{margin-top:10px;}
+
+/* LAYOUT */
+.layout{
+display:flex;
+gap:30px;
+padding:30px 40px;
+}
+
+/* FILTER CARD */
+.filters{
+width:260px;
+background:#fff;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.filter-title{
+margin:15px 0 8px;
+font-weight:bold;
+}
+
+.filters label{
+display:block;
+margin:8px 0;
+}
+
+.filters select{
+width:100%;
+padding:8px;
+margin-bottom:10px;
+}
+
+.showBtn{
+margin-top:10px;
+width:100%;
+padding:10px;
+background:#3f6fb1;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* RIGHT SIDE */
+.rightSide{
+flex:1;
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+/* WORKERS */
+.workers-popup{
+display:none;
+background:#fff;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.15);
+width:420px;
+}
+
+.workers-popup.show{display:block;}
+
+.worker{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+margin-top:10px;
+background:#fafafa;
+}
+
+.worker img{
+width:60px;
+height:60px;
+border-radius:6px;
+}
+
+/* ⭐ GPS BOX STYLE */
+.gpsBox{
+height:300px;
+background:linear-gradient(135deg,#dfe6ef,#cfd8e6);
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.gpsLabel{
+background:white;
+padding:10px 20px;
+border-radius:8px;
+font-weight:bold;
+}
+
+/* CHAT BOX DESKTOP */
+.chatBox{
+position:fixed;
+bottom:20px;
+right:20px;
+width:300px;
+background:white;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+padding:15px;
+display:none;
+}
+
+.chatMessages{
+height:150px;
+overflow:auto;
+border:1px solid #ddd;
+margin-bottom:10px;
+padding:5px;
+}
+
+.closeChat{
+margin-top:5px;
+background:red;
+color:white;
+border:none;
+padding:5px 10px;
+}
+
+/* ⭐ RESPONSIVE CHAT FIX */
+@media(max-width:768px){
+
+.layout{
+flex-direction:column;
+}
+
+.workers-popup{
+width:100%;
+}
+
+.chatBox{
+left:0;
+right:0;
+bottom:0;
+width:100%;
+border-radius:15px 15px 0 0;
+}
+}
+/* ⭐ PRO NO-OVERLAP SYSTEM */
+
+/* normal state */
+.rightSide{
+transition:all 0.3s ease;
+}
+
+/* when chat opens, shift content left */
+body.chat-open .rightSide{
+margin-right:340px; /* chat width + gap */
+}
+
+/* mobile safe */
+@media(max-width:768px){
+body.chat-open .rightSide{
+margin-right:0;
+}
+}
+
+.modal {
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.5);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.modal-content{
+background:white;
+padding:20px;
+border-radius:10px;
+width:600px;
+}

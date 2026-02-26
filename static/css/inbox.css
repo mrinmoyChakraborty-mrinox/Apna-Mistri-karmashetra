@@ -1,0 +1,395 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-image: url("../images/handshake.jpeg");
+    background-size: cover;
+    background-position: center 63%;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================= SOLID HEADER ================= */
+.topbar {
+    background: #ffffff;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+/* 🔹 NEW: Logo + Text Alignment */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-logo {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #003366;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 25px;
+    font-weight: 500;
+}
+
+/* ================= BACKGROUND & GLASS CARD ================= */
+.background-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.glass-card {
+    width: 90%;
+    max-width: 1100px;
+    height: 75vh;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.page-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.main-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 300px;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 15px;
+}
+
+.sidebar-header select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.worker-card {
+    display: flex;
+    padding: 15px;
+    gap: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.worker-card:hover,
+.worker-card.active {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #ccc;
+}
+
+.worker-card h4 { font-size: 15px; margin-bottom: 2px; }
+.worker-card p { font-size: 12px; color: #555; }
+.worker-card span { font-size: 12px; color: #888; }
+
+/* ================= CHAT PANEL ================= */
+.chat-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.chat-header {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.chat-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 🔹 GREEN BOOK BUTTON */
+.book-btn {
+    background: #28a745;   /* Changed from blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.book-btn:hover {
+    background: #218838;
+}
+
+/* ================= MESSAGES ================= */
+.chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+
+.message.left {
+    align-self: flex-start;
+}
+
+.message.right {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.bubble {
+    padding: 12px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.left .bubble {
+    color:black;
+    background: white;
+    border-bottom-left-radius: 2px;
+}
+
+.right .bubble {
+    background: #0066cc;
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+.message span {
+    font-size: 10px;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* ================= INPUT ================= */
+.chat-input {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    outline: none;
+}
+
+/* 🔹 BLUE SEND BUTTON */
+.chat-input button {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.chat-input button:hover {
+    background: #0052a3;
+}
+/* ================================================= */
+/*            🌙 PREMIUM CINEMATIC DARK MODE         */
+/* ================================================= */
+
+/* ===== DARK MODE BACKGROUND FIX ===== */
+
+body.dark-mode {
+    background: url("../images/handshake.jpeg") center/cover no-repeat fixed;
+    position: relative;
+    color: #ffffff;
+}
+
+/* Cinematic but transparent overlay */
+body.dark-mode::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 40%, rgba(0,150,255,0.25), transparent 45%),
+        radial-gradient(circle at 80% 70%, rgba(0,80,200,0.20), transparent 50%),
+        linear-gradient(to bottom, rgba(5,10,25,0.65), rgba(5,10,25,0.75));
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+
+/* ---------- Smooth Transitions Everywhere ---------- */
+body,
+.topbar,
+.glass-card,
+.sidebar,
+.chat-panel,
+.worker-card,
+.bubble,
+.chat-input input,
+.book-btn,
+.send-btn {
+    transition: all 0.4s ease;
+}
+
+/* ---------- Topbar ---------- */
+body.dark-mode .topbar {
+    background: rgba(10, 15, 30, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-mode .brand-name,
+body.dark-mode .nav-links a {
+    color: #ffffff;
+}
+
+/* ---------- Glass Card (Main Premium Effect) ---------- */
+body.dark-mode .glass-card {
+    background: rgba(20, 30, 60, 0.35);
+    backdrop-filter: blur(50px);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow:
+        0 40px 100px rgba(0,0,0,0.8),
+        inset 0 0 120px rgba(0,150,255,0.08);
+    position: relative;
+}
+
+/* Subtle Edge Glow */
+body.dark-mode .glass-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    box-shadow:
+        inset 0 0 60px rgba(0,120,255,0.15),
+        0 0 40px rgba(0,120,255,0.2);
+    pointer-events: none;
+}
+
+/* Floating Luxury Effect */
+body.dark-mode .glass-card {
+    animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ---------- Sidebar ---------- */
+body.dark-mode .sidebar {
+    background: rgba(10,20,45,0.55);
+    backdrop-filter: blur(25px);
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-mode .worker-card:hover,
+body.dark-mode .worker-card.active {
+    background: rgba(255,255,255,0.08);
+}
+
+/* ---------- Chat Panel ---------- */
+body.dark-mode .chat-panel {
+    background: rgba(15, 25, 45, 0.2);
+}
+
+/* ---------- Message Bubbles ---------- */
+body.dark-mode .left .bubble {
+    background: rgba(255,255,255,0.08);
+    color: #ffffff;
+}
+
+body.dark-mode .right .bubble {
+    background: linear-gradient(135deg, #0080ff, #0047b3);
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(0,120,255,0.5);
+}
+
+/* ---------- Chat Input ---------- */
+body.dark-mode .chat-input input {
+    background: rgba(255,255,255,0.08);
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+body.dark-mode .chat-input input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+/* ---------- Buttons ---------- */
+body.dark-mode .book-btn {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    box-shadow: 0 0 20px rgba(40,167,69,0.4);
+}
+
+body.dark-mode .send-btn {
+    background: linear-gradient(135deg, #0080ff, #0047b3);
+    box-shadow: 0 0 20px rgba(0,120,255,0.4);
+}
+
+/* ---------- Theme Toggle Button ---------- */
+body.dark-mode .theme-btn {
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
+}
