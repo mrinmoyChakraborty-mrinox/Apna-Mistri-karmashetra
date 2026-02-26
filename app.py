@@ -18,7 +18,10 @@ app.secret_key = "super-secret-key"
 
 @app.route("/")
 def landing():
-    return render_template("home.html",user=session.get("user"))
+    if session.get("user"):
+        return render_template("home.html",user=session.get("user"))
+    render_template("home.html")    
+    
 
 @app.route("/search")
 def search():
