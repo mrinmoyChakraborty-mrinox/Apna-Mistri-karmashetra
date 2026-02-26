@@ -157,7 +157,7 @@ def update_profile():
         upload = imagekit_services.upload_user_profile(uid, photo)
         photo_url = upload
     else:
-        photo_url = imagekit_services.get_profile_photo_url(uid)
+        photo_url = firebase_services.get_profile_photo_url(uid)
     firebase_services.update_user_profile(uid,{
         "name": name,
         "phone": phone,
