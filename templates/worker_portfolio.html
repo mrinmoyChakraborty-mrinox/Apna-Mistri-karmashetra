@@ -16,9 +16,13 @@
     <a href="/search">Find Workers</a>
     <a href="/about">About Us</a>
     <a href="/how-it-works">How it works</a>
+    {% if user %}
     <a href="/logout">Logout</a>
     <a href="/dashboard" class="dashboard-btn">Dashboard</a>
     <img src="{{ user.photo_url }}" class="nav-avatar">
+    {% else %}
+    <a href="/getstarted" class="login-btn">Get Started</a>
+    {% endif %}
   </div>
 </nav>
 
