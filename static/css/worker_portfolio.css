@@ -1,12 +1,8 @@
 body{
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #1e3c72, #2a5298);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
   margin:0;
-  padding:20px;
+  padding:0;
 }
 
 .portfolio-card{
@@ -193,4 +189,64 @@ body{
   padding: 8px;
   border-radius: 6px;
   margin-top: 5px;
+}
+/* ===== Portfolio Page Navbar ===== */
+
+.portfolio-navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.portfolio-navbar .logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+.portfolio-navbar .logo span{
+  color:#6fb3ff;
+}
+
+.portfolio-navbar .nav-links{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+.portfolio-navbar .nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.portfolio-navbar .nav-links a:hover{
+  opacity:0.7;
+}
+
+.dashboard-btn{
+  background:#3b82f6;
+  padding:8px 16px;
+  border-radius:20px;
+  font-weight:600;
+}
+
+.nav-avatar{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid white;
+}
+/* Center only portfolio card, not navbar */
+.portfolio-wrapper{
+  display:flex;
+  justify-content:center;
+  padding:40px 20px;
 }

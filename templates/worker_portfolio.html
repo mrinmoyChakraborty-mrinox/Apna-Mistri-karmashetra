@@ -3,9 +3,26 @@
   <title>Worker Portfolio</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/worker_portfolio.css') }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  header, .navbar {
+    display: none !important;
+  }
+</style>
+<nav class="portfolio-navbar">
+  <div class="logo">Apna<span>Mistri</span></div>
 
-<body>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/search">Find Workers</a>
+    <a href="/about">About Us</a>
+    <a href="/how-it-works">How it works</a>
+    <a href="/logout">Logout</a>
+    <a href="/dashboard" class="dashboard-btn">Dashboard</a>
+    <img src="{{ user.photo_url }}" class="nav-avatar">
+  </div>
+</nav>
 
+<div class="portfolio-wrapper">
 <div class="portfolio-card">
 
   <div class="top-profile">
@@ -156,5 +173,4 @@
 </div>
 <script src="{{ url_for('static', filename='js/worker_portfolio.js') }}"></script>
 
-</body>
 {% endblock %}
